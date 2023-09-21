@@ -18,7 +18,7 @@ public abstract class Room {
         if (_guests.length<=capacity&&this.guests[0]==null){
             System.arraycopy(_guests,0,this.guests,0,_guests.length);
             return true;
-        } else{
+        } else{ // if there's too many guests or if another party already checked in
             return false;
         }
     }

@@ -45,12 +45,12 @@ public class HotelTest {
     }
     @Test
     public void cantCheckInTooManyGuests(){
-        boolean checkedIn=hotel.checkIn(new Guest[]{guest,guest2},2);
-        assertArrayEquals(new Guest[1],bedroom2.getGuests());
+        boolean checkedIn=hotel.checkIn(new Guest[]{guest,guest,guest2},1); // room 1 has a capacity of 2
+        assertArrayEquals(new Guest[2],bedroom.getGuests());
         assertEquals(false,checkedIn);
 
-        checkedIn=hotel.checkIn(new Guest[]{guest,guest,guest2},1);
-        assertArrayEquals(new Guest[2],bedroom.getGuests());
+        checkedIn=hotel.checkIn(new Guest[]{guest,guest2},2); // room 2 has a capacity of 1
+        assertArrayEquals(new Guest[1],bedroom2.getGuests());
         assertEquals(false,checkedIn);
     }
     @Test
@@ -59,8 +59,8 @@ public class HotelTest {
         assertArrayEquals(new Guest[]{guest,null},bedroom.getGuests());
         assertEquals(true,checkedIn);
 
-        checkedIn=hotel.checkIn(new Guest[]{guest2},1);
-        assertArrayEquals(new Guest[]{guest,null},bedroom.getGuests());
-        assertEquals(false,checkedIn);
+        checkedIn=hotel.checkIn(new Guest[]{guest2},1); // after attempting to check in a new party
+        assertArrayEquals(new Guest[]{guest,null},bedroom.getGuests()); // the original party should remain in the room
+        assertEquals(false,checkedIn); // & hotel.checkIn should return false
     }
 }

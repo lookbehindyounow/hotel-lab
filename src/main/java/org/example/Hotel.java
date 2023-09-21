@@ -20,7 +20,7 @@ public class Hotel {
         return conferenceRooms;
     }
 
-    public boolean checkIn(Guest[] guests, int roomNumber){
+    public boolean checkIn(Guest[] guests, int roomNumber){ // returns boolean true if successful
         return bedrooms.get(roomNumber-1).addGuests(guests);
     }
     public void checkOut(int roomNumber){
