@@ -24,7 +24,7 @@ public class ConferenceRoomTest {
         assertArrayEquals(new Guest[10],conferenceRoom.getGuests());
         assertEquals("Conference Room",conferenceRoom.getName());
     }
-
+    //  ================================
     @Test
     public void canAddGuests(){
         boolean checkedIn=conferenceRoom.addGuests(new Guest[]{guest}); // after adding one guest

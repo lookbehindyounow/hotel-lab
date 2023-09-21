@@ -26,7 +26,7 @@ public class BedroomTest {
         assertEquals(1,bedroom.getRoomNumber());
         assertEquals(RoomType.DOUBLE,bedroom.getRoomType());
     }
-
+    //  ================================
     @Test
     public void canAddGuests(){
         boolean checkedIn=bedroom.addGuests(new Guest[]{guest});
