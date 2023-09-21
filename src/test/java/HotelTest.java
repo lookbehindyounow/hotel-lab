@@ -45,11 +45,11 @@ public class HotelTest {
     }
     @Test
     public void cantCheckInTooManyGuests(){
-        boolean checkedIn=hotel.checkIn(new Guest[]{guest,guest,guest2},1); // room 1 has a capacity of 2
+        boolean checkedIn=hotel.checkIn(new Guest[]{guest,guest,guest},1); // room 1 has a capacity of 2
         assertArrayEquals(new Guest[2],bedroom.getGuests());
         assertEquals(false,checkedIn);
 
-        checkedIn=hotel.checkIn(new Guest[]{guest,guest2},2); // room 2 has a capacity of 1
+        checkedIn=hotel.checkIn(new Guest[]{guest,guest},2); // room 2 has a capacity of 1
         assertArrayEquals(new Guest[1],bedroom2.getGuests());
         assertEquals(false,checkedIn);
     }
