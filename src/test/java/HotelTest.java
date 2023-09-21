@@ -67,9 +67,10 @@ public class HotelTest {
     //  ================================
     @Test
     public void canBook(){
-        hotel.book(1,5);
+        double price=hotel.book(1,5);
         assertEquals(1,hotel.getBookings().size());
         assertEquals(1,hotel.getBookings().get(0).getRoomNumber());
         assertEquals(5,hotel.getBookings().get(0).getNights());
+        assertEquals(150,price,0);
     }
 }

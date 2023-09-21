@@ -25,6 +25,7 @@ public class BedroomTest {
         assertArrayEquals(new Guest[2],bedroom.getGuests());
         assertEquals(1,bedroom.getRoomNumber());
         assertEquals(RoomType.DOUBLE,bedroom.getRoomType());
+        assertEquals(30,bedroom.getRate(),0);
     }
     //  ================================
     @Test

@@ -23,6 +23,7 @@ public class ConferenceRoomTest {
         assertEquals(10,conferenceRoom.getCapacity());
         assertArrayEquals(new Guest[10],conferenceRoom.getGuests());
         assertEquals("Conference Room",conferenceRoom.getName());
+        assertEquals(150,conferenceRoom.getRate(),0);
     }
     //  ================================
     @Test

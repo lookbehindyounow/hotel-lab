@@ -32,7 +32,8 @@ public class Hotel {
     public void checkOut(int roomNumber){
         bedrooms.get(roomNumber-1).removeGuests();
     }
-    public void book(int roomNumber, int nights){
+    public double book(int roomNumber, int nights){
         bookings.add(new Booking(roomNumber,nights));
+        return nights*bedrooms.get(roomNumber-1).getRate();
     }
 }
